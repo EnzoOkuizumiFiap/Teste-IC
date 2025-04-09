@@ -1,0 +1,376 @@
+/* Importa uma fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* Reset básico e Estilos Gerais */
+* {
+    box-sizing: border-box; /* Melhora o controle de padding/border */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Fonte moderna */
+    line-height: 1.7;
+    color: #444; /* Cinza escuro suave */
+    background-color: #f8f9fa; /* Fundo geral muito claro */
+}
+
+h1, h2, h3, h4 {
+    color: #1a5276; /* Azul mais sóbrio */
+    margin-bottom: 0.8rem;
+    font-weight: 700; /* Mais peso para títulos */
+}
+
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.3em; }
+
+a {
+    color: #2980b9; /* Azul padrão para links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1f618d; /* Azul mais escuro no hover */
+    text-decoration: none; /* Remove sublinhado padrão no hover */
+}
+
+/* Container para limitar largura */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    position: sticky; /* Mantém no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e9ecef;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-bottom: 0;
+    font-size: 1.8em;
+    color: #1a5276;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px; /* Espaçamento entre itens */
+}
+
+header nav ul li a {
+    font-weight: 400;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent; /* Efeito hover sutil */
+    transition: border-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* Classe 'active' pode ser adicionada via JS para a página atual */
+    color: #1f618d;
+    border-bottom-color: #2980b9;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 3rem 0; /* Mais espaço vertical */
+}
+
+section {
+    margin-bottom: 3rem;
+    padding: 2.5rem; /* Mais padding interno */
+    background-color: #ffffff; /* Fundo branco para seções */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Sombra mais pronunciada */
+}
+
+/* Seção Hero */
+#hero {
+    text-align: center;
+    background: linear-gradient(to right, #2980b9, #3498db); /* Gradiente azul */
+    color: white;
+    padding: 5rem 1.5rem; /* Mais padding */
+    border-radius: 0; /* Remove borda da seção hero */
+    box-shadow: none; /* Remove sombra da seção hero */
+    margin-bottom: 3rem; /* Mantém margem inferior */
+}
+
+#hero h2 {
+    color: white;
+    font-size: 3em; /* Título maior */
+    font-weight: 300; /* Fonte mais leve para o título principal */
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+    max-width: 700px; /* Limita largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9; /* Leve transparência */
+}
+
+/* Botões CTA */
+.cta-button, .cta-button-secondary {
+    display: inline-block;
+    padding: 14px 30px; /* Botões maiores */
+    border-radius: 25px; /* Cantos bem arredondados */
+    font-weight: 700; /* Texto em negrito */
+    margin: 0.5rem;
+    transition: all 0.3s ease; /* Transição suave */
+    border: none; /* Remove borda padrão */
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.cta-button {
+    background-color: #e67e22; /* Laranja */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #d35400; /* Laranja escuro */
+    transform: translateY(-2px); /* Efeito de levantar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.cta-button-secondary {
+    background-color: rgba(255, 255, 255, 0.9); /* Branco semi-transparente */
+    color: #2980b9; /* Azul */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cta-button-secondary:hover {
+    background-color: #ffffff; /* Branco sólido */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+/* Seção Como Funciona */
+#como-funciona ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: step-counter; /* Inicia contador */
+}
+
+#como-funciona li {
+    margin-bottom: 1.5rem;
+    padding-left: 50px; /* Espaço para o número */
+    position: relative;
+    font-size: 1.1em;
+}
+
+#como-funciona li::before {
+    counter-increment: step-counter; /* Incrementa contador */
+    content: counter(step-counter); /* Exibe o número */
+    position: absolute;
+    left: 0;
+    top: -2px;
+    background-color: #2980b9; /* Fundo azul para o número */
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Seção Benefícios */
+#beneficios {
+    background-color: #eaf2f8; /* Fundo azul muito claro */
+}
+
+#beneficios .beneficios-grid { /* Usar um grid para layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo */
+    gap: 2rem; /* Espaço entre os itens */
+    margin-top: 2rem;
+}
+
+#beneficios .beneficio-item {
+    background-color: #ffffff;
+    padding: 1.8rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#beneficios .beneficio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#beneficios .beneficio-item h4 {
+    margin-bottom: 0.5rem;
+    color: #1a5276;
+}
+
+/* Seção Depoimentos */
+#depoimentos blockquote {
+    border-left: 5px solid #8e44ad; /* Roxo mais vibrante */
+    margin: 2rem 0;
+    padding: 1rem 1.5rem 1rem 2rem;
+    background-color: #f8f9fa; /* Fundo claro */
+    font-style: italic;
+    font-size: 1.1em;
+    position: relative;
+}
+
+#depoimentos blockquote::before { /* Adiciona aspas estilizadas */
+    content: '“';
+    font-size: 4em;
+    color: #8e44ad;
+    opacity: 0.2;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+/* Formulários (Ex: Login) */
+#login-section {
+    max-width: 450px; /* Limita largura do form */
+    margin: 3rem auto; /* Centraliza */
+}
+
+#login-form div {
+    margin-bottom: 1.5rem;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login-form input[type="email"]:focus,
+#login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2);
+}
+
+#login-form button[type="submit"] {
+    width: 100%;
+    padding: 14px; /* Ajusta padding */
+    margin-top: 1rem;
+}
+
+#login-form p {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1a5276; /* Azul escuro */
+    color: #bdc3c7; /* Cinza claro */
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+footer nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    color: #ecf0f1; /* Branco/Cinza muito claro */
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: #ffffff;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin: 0;
+    color: #95a5a6; /* Cinza médio */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 2rem 0;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #hero {
+        padding: 3rem 1rem;
+    }
+
+    #hero h2 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1.1em;
+    }
+
+    #login-section {
+        margin: 2rem auto;
+        padding: 0 15px; /* Adiciona padding lateral no mobile */
+    }
+}

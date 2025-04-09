@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsyMatch - Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link CSS -->
+</head>
+<body>
+
+    <header>
+        <div class="container"> <!-- Adicionar esta div -->
+            <h1>PsyMatch</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="para-pacientes.html">Para Pacientes</a></li>
+                    <li><a href="para-psicologos.html">Para Psicólogos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#signup">Cadastre-se</a></li> <!-- Ou link para signup.html se existir -->
+                </ul>
+            </nav>
+        </div> <!-- Fechar a div .container -->
+    </header>
+
+    <main>
+        <section id="login-section">
+            <h2>Acesse sua Conta</h2>
+            <form id="login-form">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="cta-button">Entrar</button>
+                <p>Não tem uma conta? <a href="#signup">Cadastre-se</a></p>
+                 <!-- Adicionar link para "Esqueci minha senha" se necessário -->
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#termos">Termos de Uso</a></li>
+                <li><a href="#privacidade">Política de Privacidade</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 PsyMatch. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link JavaScript -->
+</body>
+</html>
